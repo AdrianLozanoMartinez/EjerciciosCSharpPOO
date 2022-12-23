@@ -13,23 +13,23 @@
         //Constructor
         public Cuenta(string titular, double cantidad)
         {
-            _titular = titular;
-            _cantidad = cantidad;
+            Titular = titular;
+            Cantidad = cantidad;
         }
 
-        public Cuenta(string titular) : this (titular, 0)  //Debemos mandar dato dado en program o por defecto
-        {
+        public Cuenta(string titular) : this (titular, 0)  //Debemos mandar dato dado en program ("Marina", 1000) o ("Adri") o por defecto (titular, 0)
+        {                             //this: Coge el constructor de arriba y da los valores por defecto
 
         }
 
-        public void ToString()
+        public override string ToString()
         {
-            Console.WriteLine($"{Titular}: {Cantidad}");
+            return $"{Titular}: {Cantidad}";
         }
 
         public void Ingresar(double cantidad)
         {
-            if(0 > cantidad)
+            if( 0 < cantidad )
             {
                 Cantidad += cantidad;
             }
@@ -37,12 +37,16 @@
 
         public void Retirar(double cantidad)
         {
+            //Opción 1
             Cantidad -= cantidad;
 
-            if ( 0 < Cantidad)
+            if ( Cantidad < 0)
             {
                 Cantidad = 0;
             }
+
+            //Opción 2
+            //Cantidad = Math.Max(0, Cantidad - cantidad); //Es un if, coge el máximo entre 0 y la resta, si da positivo coge ese número, si da negativo coge 0
         }
     }
 }
