@@ -8,10 +8,10 @@ namespace Ejercicio04
         public enum Consumo { A, B, C, D, E, F }
 
         //Constantes
-        private const double PRECIO_BASE = 100;
-        private const Colores COLOR = Colores.blanco;
-        private const Consumo CONSUMO = Consumo.F;
-        private const double PESO = 5;
+        protected const double PRECIO_BASE = 100;
+        protected const Colores COLOR = Colores.blanco;
+        protected const Consumo CONSUMO = Consumo.F;
+        protected const double PESO = 5;
 
         //Atributos
         private double _precioBase;
@@ -20,7 +20,7 @@ namespace Ejercicio04
         private double _peso;
 
         //Propiedades
-        public double PrecioBase { get => _precioBase; }
+        public double PrecioBase { get => _precioBase; protected set => _precioBase = value; }
         public Colores Color { get => _color; }
         public Consumo ConsumoEnergetico { get => _consumoEnergetico; }
         public double Peso { get => _peso; }
@@ -59,7 +59,7 @@ namespace Ejercicio04
                 _color = color;
         }
 
-        public void PrecioFinal()
+        public virtual void PrecioFinal()
         {
             PrecioFinalConsumo();
             PrecioFinalPeso();
