@@ -12,7 +12,7 @@ namespace Ejercicio04
             double precioLavadora = 0;
             double precioTelevision = 0;
 
-            Electrodomestico[] electrodomestico = new Electrodomestico[POSICION];
+            Electrodomestico[] electrodomesticos = new Electrodomestico[POSICION];
 
             //////////////////////////////////////////////////////////////POR TECLADO/////////////////////////////////////////////////////////////
 
@@ -54,7 +54,7 @@ namespace Ejercicio04
 
             //////////////////////////////////////////////////////////////MOSTRAR/////////////////////////////////////////////////////////////
 
-            electrodomestico = new Electrodomestico[POSICION] { 
+            electrodomesticos = new Electrodomestico[POSICION] { 
 
             //MODO TECLADO
             /*new Lavadora(precio, color, letra, peso), 
@@ -82,11 +82,20 @@ namespace Ejercicio04
             };
 
 
-            foreach (Electrodomestico local in electrodomestico)
+            foreach (Electrodomestico electrodomestico in electrodomesticos)
             {
+                electrodomestico.PrecioFinal();
 
+                precioElectrodomesticos += electrodomestico.PrecioBase;
+
+                if (electrodomestico is Lavadora)
+                    precioLavadora += electrodomestico.PrecioBase;
+                else if (electrodomestico is Television)
+                    precioTelevision += electrodomestico.PrecioBase;
             }
-
+            Console.WriteLine($"Precio total electrodomésticos: {precioElectrodomesticos}");
+            Console.WriteLine($"Precio total lavadoras: {precioLavadora}");
+            Console.WriteLine($"Precio total Televisión: {precioTelevision}");
         }
     }
 }
