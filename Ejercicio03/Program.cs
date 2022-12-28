@@ -25,11 +25,6 @@
                 Console.WriteLine($"{passwords[i].PasswordProperty} {isStrong[i]}");
                                                 //Propiedad que se lee porque ya se mete en el atributo la contraseña a través del método llamadod esde el constructor y luego desde el for
             }
-
-
-
-
-          
         }
     }
 }

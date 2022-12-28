@@ -92,7 +92,14 @@ namespace Ejercicio04
 
         private void PrecioFinalPeso()
         {
-
+            if (_peso >= 0 && _peso < 20)
+                _precioBase += 10;
+            else if (_peso < 50)
+                _precioBase += 50;
+            else if (_peso < 80)
+                _precioBase += 80;
+            else
+                _precioBase += 100;
         }
     }
 }
