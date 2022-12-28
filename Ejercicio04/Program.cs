@@ -1,4 +1,6 @@
-﻿namespace Ejercicio04
+﻿using static Ejercicio04.Electrodomestico;
+
+namespace Ejercicio04
 {
     class Program
     {
@@ -6,11 +8,11 @@
 
         static void Main()
         {
-            double sumaLavadora = 0;
-            double sumaTelevision = 0;
-            double sumaElectrodomesticos = 0;
+            double precioElectrodomesticos = 0;
+            double precioLavadora = 0;
+            double precioTelevision = 0;
 
-            Electrodomestico[] consumo = new Electrodomestico[POSICION];
+            Electrodomestico[] electrodomestico = new Electrodomestico[POSICION];
 
             //////////////////////////////////////////////////////////////POR TECLADO/////////////////////////////////////////////////////////////
 
@@ -52,7 +54,7 @@
 
             //////////////////////////////////////////////////////////////MOSTRAR/////////////////////////////////////////////////////////////
 
-            consumo = new Electrodomestico[POSICION] { 
+            electrodomestico = new Electrodomestico[POSICION] { 
 
             //MODO TECLADO
             /*new Lavadora(precio, color, letra, peso), 
@@ -67,21 +69,22 @@
             new Television(precio, color, letra, peso, resolucion, tdt)*/
 
             //MODO MANUAL
-            new Electrodomestico(120, "azul", 'C', 25),
+            new Electrodomestico(120, 25, Electrodomestico.Colores.blanco, Electrodomestico.Consumo.E),
             new Electrodomestico(115, 15),
             new Electrodomestico(),
-            new Lavadora(200, "Gris", 'a', 10),
+            new Lavadora(30, 200, 10, Electrodomestico.Colores.gris, Electrodomestico.Consumo.A),
             new Lavadora(250, 50),
             new Lavadora(),
-            new Television(1200.95, "Blanco", 'c', 3, 37, true),
-            new Television(320, "ROJO", 'A', 2, 55, false),
+            new Television(1080, true, 1200.95, 3, Electrodomestico.Colores.rojo, Electrodomestico.Consumo.C),
+            new Television(720, false, 582, 5, Electrodomestico.Colores.azul, Electrodomestico.Consumo.B),
             new Television(650, 1.5),
             new Television()
             };
 
 
-            foreach (Electrodomestico local in consumo)
+            foreach (Electrodomestico local in electrodomestico)
             {
+
             }
 
         }
