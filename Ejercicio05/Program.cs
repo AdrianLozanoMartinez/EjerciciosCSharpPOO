@@ -10,7 +10,7 @@
             //persona.CalcularDNI();
             Console.WriteLine(persona);
             //Console.WriteLine(persona.Dni);
-           // Console.WriteLine(persona.ToString());
+            //Console.WriteLine(persona.ToString());
         }
     }
 }

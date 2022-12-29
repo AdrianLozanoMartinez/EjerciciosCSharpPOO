@@ -9,32 +9,33 @@ namespace Ejercicio05
         const string LETTERS = "trwagmyfpdxbnjzsqvhlcke";
 
         //Atributos
-        private string _nombre;
-        private int _edad;
+        private string _name;
+        private int _age;
         private string _dni;
 
         //Propiedades
-        public string Nombre { get => _nombre; set => _nombre = value; }
-        public int Edad { get => _edad; set => _edad = value; }
+        public string Name { get => _name; set => _name = value; }
+        public int Age { get => _age; set => _age = value; }
         public string Dni { get => _dni; set => _dni = value; }
         //public string Dni { get => _dni; set => _dni = CalcularDNI(); }
 
         //Constructores
-        public Persona(string nombre = "", int edad = 0, string dni = "")
+        public Persona(string nombre = "", int age = 0, string dni = "")
         {
-            Nombre = nombre;
-            Edad = edad;
+            Name = nombre;
+            Age = age;
             //Dni = dni; //dni sin letra
             Dni = CalcularDNI(dni); 
         }
 
+        //Métodos
         public override string ToString()
         {
             //Se puede hacer $"fff\n" pero es otro modo
             StringBuilder builder = new StringBuilder(); //Igual que $"Tiene de IMC: \n
 
-            builder.AppendLine($"Nombre: {_nombre}"); //Se usa atributo porque la propiedad es solo escritura sino seria propiedad
-            builder.AppendLine($"Edad: {_edad}");
+            builder.AppendLine($"Nombre: {_name}"); //Se usa atributo porque la propiedad es solo escritura sino seria propiedad
+            builder.AppendLine($"Edad: {_age}");
             builder.AppendLine($"DNI: {_dni}");
 
             return builder.ToString();
@@ -55,6 +56,18 @@ namespace Ejercicio05
             }
 
             return dni + letter;
+        }
+
+        public bool EsMayorDeEdad()
+        {
+            bool isHigher = false;
+
+            if (_age >= 18)
+            {
+                isHigher = true;
+            }
+
+            return isHigher;
         }
     }
 }
