@@ -99,7 +99,7 @@ namespace Ejercicio02
 
             char letter = LETTERS[result % LETTERS.Length]; //o 23
 
-            return $"DNI: {num}{letter}";
+            return $"{num}{letter}";
         }
 
         //2º Opción
