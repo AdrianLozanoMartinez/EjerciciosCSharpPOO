@@ -6,43 +6,43 @@ namespace Ejercicio05
     class Cuenta
     {
         //Atributos
-        private string _titular;
-        private double _cantidad;
+        private string _headline;
+        private double _amount;
 
         //Propiedades
-        public string Titular { get => _titular; set => _titular = value; }
-        public double Cantidad { get => _cantidad; set => _cantidad = value; }
+        public string Headline { get => _headline; set => _headline = value; }
+        public double Amount { get => _amount; set => _amount = value; }
 
         //Constructores
-        public Cuenta(string titular, double cantidad)
+        public Cuenta(string headline, double amount)
         {
-            Titular = titular;
-            Cantidad = cantidad;
+            Headline = headline;
+            Amount = amount;
         }
-        public Cuenta(string titular) : this (titular, 0) {}
+        public Cuenta(string headline) : this (headline, 0) {}
 
         //Métodos
         public override string ToString()
         {
             StringBuilder builder = new StringBuilder(); 
 
-            builder.AppendLine($"Titular: {Titular}"); 
-            builder.AppendLine($"Cantidad: {Cantidad}");
+            builder.AppendLine($"Titular: {Headline}"); 
+            builder.AppendLine($"Cantidad: {Amount}");
 
             return builder.ToString();
         }
 
-        public void Ingresar(double cantidad)
+        public void Ingresar(double amount)
         {
-            if (cantidad > 0)
+            if (amount > 0)
             {
-                Cantidad += cantidad;
+                Amount += amount;
             }
         }
 
-        public void Retirar(double cantidad)
+        public void Retirar(double amount)
         {
-           Cantidad -= cantidad;
+           Amount -= amount;
         }
     }
 }
