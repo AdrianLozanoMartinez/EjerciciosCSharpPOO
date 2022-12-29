@@ -32,11 +32,11 @@ namespace Ejercicio05
         public override string ToString()
         {
             //Se puede hacer $"fff\n" pero es otro modo
-            StringBuilder builder = new StringBuilder(); //Igual que $"Tiene de IMC: \n
+            StringBuilder builder = new StringBuilder(); 
 
-            builder.AppendLine($"Nombre: {_name}"); //Se usa atributo porque la propiedad es solo escritura sino seria propiedad
-            builder.AppendLine($"Edad: {_age}");
-            builder.AppendLine($"DNI: {_dni}");
+            builder.AppendLine($"Nombre: {Name}"); 
+            builder.AppendLine($"Edad: {Age}");
+            builder.AppendLine($"DNI: {Dni}");
 
             return builder.ToString();
         }

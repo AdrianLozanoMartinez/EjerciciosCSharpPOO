@@ -1,4 +1,7 @@
-﻿namespace Ejercicio05
+﻿using System.Text;
+using System.Xml.Linq;
+
+namespace Ejercicio05
 {
     class Cuenta
     {
@@ -13,9 +16,19 @@
         //Constructores
         public Cuenta(string titular, double cantidad)
         {
-            _titular = titular;
-            _cantidad = cantidad;
+            Titular = titular;
+            Cantidad = cantidad;
         }
         public Cuenta(string titular) : this (titular, 0) {}
+
+        public override string ToString()
+        {
+            StringBuilder builder = new StringBuilder(); 
+
+            builder.AppendLine($"Titular: {Titular}"); 
+            builder.AppendLine($"Cantidad: {Cantidad}");
+
+            return builder.ToString();
+        }
     }
 }

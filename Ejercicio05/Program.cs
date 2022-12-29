@@ -11,6 +11,8 @@
             Console.WriteLine(persona);
             //Console.WriteLine(persona.Dni);
             //Console.WriteLine(persona.ToString());
+
+            Cuenta cuenta = new Cuenta("Adri");
         }
     }
 }
