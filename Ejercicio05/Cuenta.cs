@@ -21,6 +21,7 @@ namespace Ejercicio05
         }
         public Cuenta(string titular) : this (titular, 0) {}
 
+        //Métodos
         public override string ToString()
         {
             StringBuilder builder = new StringBuilder(); 
@@ -29,6 +30,19 @@ namespace Ejercicio05
             builder.AppendLine($"Cantidad: {Cantidad}");
 
             return builder.ToString();
+        }
+
+        public void Ingresar(double cantidad)
+        {
+            if (cantidad > 0)
+            {
+                Cantidad += cantidad;
+            }
+        }
+
+        public void Retirar(double cantidad)
+        {
+           Cantidad -= cantidad;
         }
     }
 }
