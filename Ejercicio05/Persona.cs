@@ -1,5 +1,4 @@
 ﻿using System.Text;
-using System.Xml.Linq;
 
 namespace Ejercicio05
 {
@@ -25,16 +24,16 @@ namespace Ejercicio05
             Name = nombre;
             Age = age;
             //Dni = dni; //dni sin letra
-            Dni = CalcularDNI(dni); 
+            Dni = CalcularDNI(dni);
         }
 
         //Métodos
         public override string ToString()
         {
             //Se puede hacer $"fff\n" pero es otro modo
-            StringBuilder builder = new StringBuilder(); 
+            StringBuilder builder = new StringBuilder();
 
-            builder.AppendLine($"Nombre: {Name}"); 
+            builder.AppendLine($"Nombre: {Name}");
             builder.AppendLine($"Edad: {Age}");
             builder.AppendLine($"DNI: {Dni}");
 

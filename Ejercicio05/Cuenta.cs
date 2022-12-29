@@ -40,7 +40,7 @@ namespace Ejercicio05
             }
         }
 
-        public void Retirar(double amount)
+        public virtual void Retirar(double amount)
         {
            Amount -= amount;
         }
