@@ -1,4 +1,6 @@
-﻿namespace Ejercicio05
+﻿using System.Text;
+
+namespace Ejercicio05
 {
     class CuentaJoven : Persona
     {
@@ -30,6 +32,21 @@
             {
                 isHeadline = true;
             }
+        }
+
+        public override string ToString()
+        {
+            StringBuilder builder= new StringBuilder();
+
+            builder.AppendLine("Cuenta Joven");
+            builder.AppendLine($"Bonus: {Bonus}");
+            builder.AppendLine($"Titular: {Headline}");
+            builder.AppendLine($"Cantidad: {Amount}");
+            builder.AppendLine($"Nombre: {Name}");
+            builder.AppendLine($"Edad: {Age}");
+            builder.AppendLine($"Dni: {Dni}");
+
+            return builder.ToString();
         }
     }
 }
