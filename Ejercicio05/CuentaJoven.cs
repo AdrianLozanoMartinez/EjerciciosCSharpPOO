@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Net;
+using System.Text;
 
 namespace Ejercicio05
 {
@@ -18,13 +19,13 @@ namespace Ejercicio05
         //public bool IsHeadline { get => _isHeadline; set => _isHeadline = value; }
 
         //Constructores
-        public CuentaJoven(string headline, double amount, int bonus) : base (headline, amount)
+        public CuentaJoven(string headline, double amount, int bonus, string nombre, int age, int dni) : base (headline, amount, nombre, age, dni)
         { 
             Headline = headline;
             Amount = amount;
             Bonus = bonus;
         }
-        public CuentaJoven(string headline) : this (headline, 0, 0) { }
+        public CuentaJoven(string headline) : this (headline, 0, 0, "", 0, 0) { }
 
         //Métodos
         public bool EsTitularValido()

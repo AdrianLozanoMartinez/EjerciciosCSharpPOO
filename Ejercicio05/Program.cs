@@ -37,15 +37,12 @@
            Persona maria = new Persona("María", 20, 123456789);
            Persona pedro = new Persona("Pedro", 40, 987654321);
 
-           Cuenta cuentaPedro = new Cuenta("Pedro");
+           Cuenta cuentaPedro = new Cuenta("Pedro", 0, "Pedro", 40, 987654321);
 
-           CuentaJoven cuentaJovenMaria = new CuentaJoven("Maria");
-           CuentaJoven cuentaJovenPedro = new CuentaJoven("Pedro");
+           CuentaJoven cuentaJovenMaria = new CuentaJoven("Maria", 0, 0, "María", 20, 123456789);
+           CuentaJoven cuentaJovenPedro = new CuentaJoven("Pedro", 0, 0, "Pedro", 40, 987654321);
 
-            //CuentaJoven cuentaJovenPedro = new CuentaJoven("Pedro", 40, 987654321);
-
-
-            Console.WriteLine(maria);
+           Console.WriteLine(maria);
            Console.WriteLine(pedro);
 
            Console.WriteLine();
@@ -57,7 +54,7 @@
            Console.WriteLine();
 
            cuentaJovenMaria.Ingresar(90);
-           cuentaJovenMaria.Retirar(200);
+           cuentaJovenMaria.Retirar(20);
            Console.WriteLine(cuentaJovenMaria);
 
            cuentaJovenPedro.Ingresar(80);

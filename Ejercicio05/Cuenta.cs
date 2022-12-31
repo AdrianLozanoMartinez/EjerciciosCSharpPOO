@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Net;
+using System.Text;
 using System.Xml.Linq;
 
 namespace Ejercicio05
@@ -14,12 +15,12 @@ namespace Ejercicio05
         public double Amount { get => _amount; set => _amount = value; }
 
         //Constructores
-        public Cuenta(string headline, double amount) 
+        public Cuenta(string headline, double amount, string nombre, int age, int dni) : base (nombre, age, dni)
         {
             Headline = headline;
             Amount = amount;
         }
-        public Cuenta(string headline) : this (headline, 0) {}
+        public Cuenta(string headline) : this (headline, 0, "", 0, 0) {}
 
         //Métodos
         public override string ToString()
