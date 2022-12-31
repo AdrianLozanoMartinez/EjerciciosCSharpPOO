@@ -18,30 +18,23 @@
 
             foreach (Persona persona in personas)
             {
-                if (persona is Persona) 
-                    persona.
-                pedroCuenta.Ingresar(1000);
-                PedroJoven.Ingresar(500);
-                MariaJoven.Ingresar(2000);
 
-                precioElectrodomesticos += electrodomestico.PrecioBase;
+                if (persona is Cuenta)
+                {
+                    Cuenta personaCuenta = persona as Cuenta;
+                    personaCuenta.Ingresar(1000);
+                }
+                if (persona is CuentaJoven)
+                {
+                    CuentaJoven personaCuentaJoven = persona as CuentaJoven;
+                    personaCuentaJoven.Ingresar(1000);
+                }
 
-                if (electrodomestico is Lavadora)
-                    precioLavadora += electrodomestico.PrecioBase;
-                else if (electrodomestico is Television)
-                    precioTelevision += electrodomestico.PrecioBase;
+                
+                Console.WriteLine(persona);
             }
-            Console.WriteLine($"Precio total electrodomésticos: {precioElectrodomesticos}");
-            Console.WriteLine($"Precio total lavadoras: {precioLavadora}");
-            Console.WriteLine($"Precio total Televisión: {precioTelevision}");
-
-
-            
-
-            Console.WriteLine(pedroCuenta);
-            Console.WriteLine(PedroJoven);
-            Console.WriteLine(MariaJoven);
-
+       
+           
         }
     }
 }

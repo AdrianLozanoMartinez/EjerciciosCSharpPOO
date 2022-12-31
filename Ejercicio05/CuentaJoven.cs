@@ -48,6 +48,11 @@ namespace Ejercicio05
         public override void Ingresar(double amount)
         {
             base.Ingresar(amount);
+
+           if (amount > 0)
+            {
+                Amount += amount;
+            }
         }
 
         public override string ToString()
