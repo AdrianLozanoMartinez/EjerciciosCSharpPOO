@@ -19,7 +19,7 @@ namespace Ejercicio05
         //public string Dni { get => _dni; set => _dni = CalcularDNI(); }
 
         //Constructores
-        public Persona(string nombre = "", int age = 0, string dni = "")
+        public Persona(string nombre = "", int age = 0, int dni = 0)
         {
             Name = nombre;
             Age = age;
@@ -40,21 +40,20 @@ namespace Ejercicio05
             return builder.ToString();
         }
 
-        public string CalcularDNI(string dni)
+        public string CalcularDNI(int dni)
         {
             char letter = ' ';
 
             try
             {
-                int DniNumber = int.Parse(dni);
-                letter = LETTERS[DniNumber % LETTERS.Length];
+                letter = LETTERS[dni % LETTERS.Length];
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
 
-            return dni + letter;
+            return $"{dni} {letter}";
         }
 
         public bool EsMayorDeEdad()

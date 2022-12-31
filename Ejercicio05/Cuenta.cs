@@ -3,7 +3,7 @@ using System.Xml.Linq;
 
 namespace Ejercicio05
 {
-    class Cuenta
+    class Cuenta : Persona
     {
         //Atributos
         private string _headline;
@@ -14,7 +14,7 @@ namespace Ejercicio05
         public double Amount { get => _amount; set => _amount = value; }
 
         //Constructores
-        public Cuenta(string headline, double amount)
+        public Cuenta(string headline, double amount) 
         {
             Headline = headline;
             Amount = amount;
@@ -32,7 +32,7 @@ namespace Ejercicio05
             return builder.ToString();
         }
 
-        public void Ingresar(double amount)
+        public virtual void Ingresar(double amount)
         {
             if (amount > 0)
             {

@@ -2,22 +2,23 @@
 
 namespace Ejercicio05
 {
-    class CuentaJoven : Persona
+    class CuentaJoven : Cuenta
     {
         //Atributos
         private string _headline;
         private double _amount;
         private int _bonus;
 
-        bool isHeadline = false;
+        bool _isHeadline = false;
 
         //Propiedades
         public string Headline { get => _headline; set => _headline = value; }
         public double Amount { get => _amount; set => _amount = value; }
         public int Bonus { get => _bonus; set => _bonus = value; }
+        public bool IsHeadline { get => _isHeadline; set => _isHeadline = value; }
 
         //Constructores
-        public CuentaJoven(string headline, double amount, int bonus) 
+        public CuentaJoven(string headline, double amount, int bonus) : base (headline, amount)
         { 
             Headline = headline;
             Amount = amount;
@@ -30,23 +31,33 @@ namespace Ejercicio05
         {
             if (Age > 18 && Age < 25)
             {
-                isHeadline = true;
+                _isHeadline = true;
             }
 
-            return isHeadline;
+            return _isHeadline;
         }
 
-        public void Retirar(double amount)
+        public override void Retirar(double amount)
         {
-            if (isHeadline == true)
+            EsTitularValido();
+
+            if (_isHeadline == true)
             Amount -= amount;
+        }
+
+        public override void Ingresar(double amount)
+        {
+            base.Ingresar(amount);
         }
 
         public override string ToString()
         {
-            StringBuilder builder= new StringBuilder();
+            StringBuilder builder = new StringBuilder();
 
             builder.AppendLine("Cuenta Joven");
+
+            base.ToString();
+
             builder.AppendLine($"Bonus: {Bonus}");
             builder.AppendLine($"Titular: {Headline}");
             builder.AppendLine($"Cantidad: {Amount}");
