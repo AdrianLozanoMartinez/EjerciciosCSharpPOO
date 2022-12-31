@@ -9,13 +9,13 @@ namespace Ejercicio05
         private double _amount;
         private int _bonus;
 
-        bool _isHeadline = false;
+        //bool _isHeadline = false;
 
         //Propiedades
         public string Headline { get => _headline; set => _headline = value; }
         public double Amount { get => _amount; set => _amount = value; }
         public int Bonus { get => _bonus; set => _bonus = value; }
-        public bool IsHeadline { get => _isHeadline; set => _isHeadline = value; }
+        //public bool IsHeadline { get => _isHeadline; set => _isHeadline = value; }
 
         //Constructores
         public CuentaJoven(string headline, double amount, int bonus) : base (headline, amount)
@@ -29,6 +29,8 @@ namespace Ejercicio05
         //Métodos
         public bool EsTitularValido()
         {
+            bool _isHeadline = false;
+
             if (Age > 18 && Age < 25)
             {
                 _isHeadline = true;
@@ -39,10 +41,14 @@ namespace Ejercicio05
 
         public override void Retirar(double amount)
         {
-            EsTitularValido();
+            base.Retirar(amount);
+
+            bool _isHeadline = EsTitularValido();
 
             if (_isHeadline == true)
-            Amount -= amount;
+            {
+                Amount -= amount;
+            }
         }
 
         public override void Ingresar(double amount)
