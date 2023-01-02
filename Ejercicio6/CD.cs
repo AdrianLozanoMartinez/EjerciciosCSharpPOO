@@ -12,7 +12,7 @@
         //Constructor
         public CD(int tamano)
         {
-            //_songs = _songs[tamano];
+            _songs[NumberSongs] = _songs[tamano];
         }
 
         //Métodos
@@ -26,7 +26,7 @@
             return song;
         }
 
-        public object Agrega(string song)
+        public object Agrega(object song)
         {
             for (int i = 0; i < _songs.Length; i++)
             {
@@ -42,11 +42,11 @@
             return _songs;
         }
 
-        public object[] Elimina(string song)
+        public object[] Elimina(int song)
         {
             for (int i = 0; i < _songs.Length; i++)
             {
-                if (_songs[i] == song)
+                if (_songs[i] == _songs[song])
                 _songs[i] = "";
             }
             return _songs;

@@ -7,10 +7,11 @@
         private string _author;
 
         //Constructor
-        public Cancion(string title, string author)
+        //public Cancion(string title, string author)
+        public Cancion(string title)
         {
             _title= title;
-            _author= author;
+            //_author= author;
         }
     }
 }
