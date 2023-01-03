@@ -2,7 +2,7 @@
 
 namespace Ejercicio07
 {
-    class Serie
+    class Serie : IEntregable 
     {
         //Constantes
         private const int NUMBER = 3;
@@ -38,13 +38,40 @@ namespace Ejercicio07
         public override string ToString()
         {
             StringBuilder builder = new StringBuilder();
-            builder.AppendLine($"Título:              {_title}");
-            builder.AppendLine($"Número de temporada: {_number}");
-            builder.AppendLine($"Género:              {_gender}");
-            builder.AppendLine($"Creador:             {_creator}");
+            builder.AppendLine($"Título:              {Title}");
+            builder.AppendLine($"Número de temporada: {Number}");
+            builder.AppendLine($"Género:              {Gender}");
+            builder.AppendLine($"Creador:             {Creator}");
             builder.AppendLine($"Entregado:           {_delivered}");
 
             return builder.ToString();
+        }
+
+        public bool Entregar()
+        {
+            return true;
+        }
+
+        public bool Devolver()
+        {
+            return false;
+        }
+
+        public bool EsEntregado()
+        {
+            bool condition;
+
+            if (Devolver())
+                condition = false;
+            else 
+                condition = true;
+
+            return condition;
+        }
+
+        public int CompareTo(object a)
+        {
+            return Number.CompareTo(a.ToString());
         }
     }
 }

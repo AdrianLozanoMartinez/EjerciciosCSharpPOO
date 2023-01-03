@@ -2,7 +2,7 @@
 
 namespace Ejercicio07
 {
-    class VideoJuego
+    class VideoJuego : IEntregable
     {
         //Constantes
         private const int HOURS = 10;
@@ -33,13 +33,40 @@ namespace Ejercicio07
         public override string ToString()
         {
             StringBuilder builder = new StringBuilder();
-            builder.AppendLine($"Título:              {_title}");
-            builder.AppendLine($"Horas estimadas:     {_hours}");
-            builder.AppendLine($"Género:              {_gender}");
-            builder.AppendLine($"Compañía:            {_company}");
+            builder.AppendLine($"Título:              {Title}");
+            builder.AppendLine($"Horas estimadas:     {Hours}");
+            builder.AppendLine($"Género:              {Gender}");
+            builder.AppendLine($"Compañía:            {Company}");
             builder.AppendLine($"Entregado:           {_delivered}");
 
             return builder.ToString();
+        }
+
+        public bool Entregar()
+        {
+            return true;
+        }
+
+        public bool Devolver()
+        {
+            return false;
+        }
+
+        public bool EsEntregado()
+        {
+            bool condition;
+
+            if (Devolver())
+                condition = false;
+            else
+                condition = true;
+
+            return condition;
+        }
+
+        public int CompareTo(object a)
+        {
+            return Hours.CompareTo(a.ToString());
         }
     }
 }
