@@ -27,10 +27,10 @@ namespace Ejercicio07
         //Constructores
         public Serie(string title, int number, string gender, string creator) 
         {
-            _title = title;
-            _number = number;
-            _gender = gender;
-            _creator = creator;
+            Title = title;
+            Number = number;
+            Gender = gender;
+            Creator = creator;
         }
         public Serie(string title, string creator) : this (title, NUMBER, GENDER, creator) { }
         public Serie() : this (TITLE, NUMBER, GENDER, CREATOR) { }

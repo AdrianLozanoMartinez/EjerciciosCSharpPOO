@@ -25,8 +25,14 @@ namespace Ejercicio07
         public string Company { get => _company; set => _company = value; }
 
         //Constructores
-        public VideoJuego(string _title, int _hours, string _gender, string _company) { }
-        public VideoJuego(string _title, int _hours) : this (_title, _hours, GENDER, COMPANY) { }
+        public VideoJuego(string title, int hours, string gender, string company) 
+        {
+            Title = title;
+            Hours = hours;
+            Gender = gender;
+            Company = company;
+        }
+        public VideoJuego(string title, int hours) : this (title, hours, GENDER, COMPANY) { }
         public VideoJuego() : this (TITLE, HOURS) { }
 
         //Métodos
