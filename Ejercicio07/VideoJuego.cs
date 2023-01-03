@@ -50,29 +50,45 @@ namespace Ejercicio07
 
         public bool Entregar()
         {
-            return true;
+            _delivered = true;
+            return _delivered;
         }
 
         public bool Devolver()
         {
-            return false;
+            _delivered = false;
+            return _delivered;
         }
 
         public bool EsEntregado()
         {
             bool condition;
 
-            if (Devolver())
-                condition = false;
-            else
+            if (_delivered == true)
                 condition = true;
+            else
+                condition = false;
 
             return condition;
         }
 
         public int CompareTo(object a)
         {
-            return Hours.CompareTo(a.ToString());
+            int estado = -1;
+
+            //Hacemos un casting de objetos para usar el metodo get
+            VideoJuego juego = a as VideoJuego;
+
+            if (Hours > juego.Hours)
+            {
+                estado = 1;
+            }
+            else if (Hours == juego.Hours)
+            {
+                estado = 0;
+            }
+
+            return estado;
         }
     }
 }

@@ -49,29 +49,49 @@ namespace Ejercicio07
 
         public bool Entregar()
         {
-            return true;
+            _delivered = true;
+            return _delivered;
         }
 
         public bool Devolver()
         {
-            return false;
+            _delivered = false;
+            return _delivered;
         }
 
         public bool EsEntregado()
         {
             bool condition;
 
-            if (Devolver())
-                condition = false;
-            else 
+            if (_delivered == true)
                 condition = true;
+            else
+                condition = false;
 
             return condition;
         }
 
         public int CompareTo(object a)
         {
-            return Number.CompareTo(a.ToString());
+            int estado = -1;
+
+            //Hacemos un casting de objetos para usar el metodo get
+            Serie serie = a as Serie;
+
+            //Si lo que ya estaba serie[i] o Number es mayor que lo que metemos en parámetro serieMayor o serie.Number
+            if (Number > serie.Number) //Aquí elegimos el tipo de comparación, podemos hacer que serie[i] en lugar de mayor sea menor u otra condición
+            {
+                estado = 1; //El estado que devuelve, ya que CompareTo devuelve 1,0,-1
+                /* 1:  La serie[i] es mayor que la serieMayor
+                 * 0:  Las Series son iguales
+                 * -1: La serie[i] es menor que la serieMayor*/
+            }
+            else if (Number == serie.Number)
+            {
+                estado = 0;
+            }
+
+            return estado;
         }
     }
 }

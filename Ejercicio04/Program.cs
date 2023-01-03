@@ -1,6 +1,4 @@
-﻿using static Ejercicio04.Electrodomestico;
-
-namespace Ejercicio04
+﻿namespace Ejercicio04
 {
     class Program
     {
