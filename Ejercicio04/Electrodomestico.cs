@@ -14,13 +14,13 @@ namespace Ejercicio04
         protected const double PESO = 5;
 
         //Atributos
-        private double _precioBase;
-        private Colores _color;
-        private Consumo _consumoEnergetico;
-        private double _peso;
+        protected double _precioBase;
+        protected Colores _color;
+        protected Consumo _consumoEnergetico;
+        protected double _peso;
 
         //Propiedades
-        public double PrecioBase { get => _precioBase; protected set => _precioBase = value; }
+        public double PrecioBase { get => _precioBase; }
         public Colores Color { get => _color; }
         public Consumo ConsumoEnergetico { get => _consumoEnergetico; }
         public double Peso { get => _peso; }

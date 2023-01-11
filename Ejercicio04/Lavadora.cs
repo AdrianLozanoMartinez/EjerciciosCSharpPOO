@@ -23,7 +23,7 @@
         {
             base.PrecioFinal();
 
-            if (_carga > 30) PrecioBase += 50;
+            if (_carga > 30) _precioBase += 50;
         }
     }
 }

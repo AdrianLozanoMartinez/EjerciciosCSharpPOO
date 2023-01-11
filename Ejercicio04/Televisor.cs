@@ -30,8 +30,8 @@ namespace Ejercicio04
         {
             base.PrecioFinal();
 
-            if (_tdt) PrecioBase += 50;
-            if (_resolucion > 40) PrecioBase *= 1.3;
+            if (_tdt) _precioBase += 50;
+            if (_resolucion > 40) _precioBase *= 1.3;
             /* Es igual que si hacemos:
                Precio * 100     Precio * 30            ( 100   30  )   
                ------------  +  ----------- = Precio * ( --- + --- ) = 1 + 0.3 = 1.3
