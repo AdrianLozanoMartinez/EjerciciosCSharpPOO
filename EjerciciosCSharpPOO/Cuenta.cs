@@ -1,38 +1,40 @@
-﻿namespace Ejercicio01
+﻿using System.Text;
+
+namespace Ejercicio01
 {
     class Cuenta
     {
-        //Atributo
+        //Atributos
         private string _titular;
         private double _cantidad;
 
-        //Propiedad
+        //Propiedades
         public string Titular { get => _titular; set => _titular = value; }
         public double Cantidad { get => _cantidad; set => _cantidad = value; }
 
-        //Constructor
+        //Constructores
         public Cuenta(string titular, double cantidad)
         {
-            Titular = titular;
-            Cantidad = cantidad;
+            _titular = titular;
+            _cantidad = cantidad;
         }
+        public Cuenta(string titular) : this(titular, 0) { }
 
-        public Cuenta(string titular) : this (titular, 0)  //Debemos mandar dato dado en program ("Marina", 1000) o ("Adri") o por defecto (titular, 0)
-        {                             //this: Coge el constructor de arriba y da los valores por defecto
-
-        }
-
+        //Métodos hererados
         public override string ToString()
         {
-            return $"{Titular}: {Cantidad}";
+            StringBuilder builder = new StringBuilder();
+            builder.AppendLine($"{Titular}");
+            builder.AppendLine($"{Cantidad}");
+
+            return builder.ToString();
         }
 
+        //Métodos
         public void Ingresar(double cantidad)
         {
-            if( 0 < cantidad )
-            {
+            if (cantidad > 0)
                 Cantidad += cantidad;
-            }
         }
 
         public void Retirar(double cantidad)
@@ -40,10 +42,8 @@
             //Opción 1
             Cantidad -= cantidad;
 
-            if ( Cantidad < 0)
-            {
+            if (Cantidad < 0)
                 Cantidad = 0;
-            }
 
             //Opción 2
             //Cantidad = Math.Max(0, Cantidad - cantidad); //Es un if, coge el máximo entre 0 y la resta, si da positivo coge ese número, si da negativo coge 0

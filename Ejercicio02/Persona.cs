@@ -1,6 +1,5 @@
-﻿using System.Diagnostics.Metrics;
+﻿using System.Net;
 using System.Text;
-using System.Xml.Linq;
 
 namespace Ejercicio02
 {
@@ -42,24 +41,24 @@ namespace Ejercicio02
             Height = height;
             _dni = GeneraDNI(); //Porque se genera el dato
         }
-        public Persona(string name, int age, sexo sexo) : this (name, age, 0, sexo, 0){}
-        public Persona() : this (string.Empty, 0, SEXO){}
+        public Persona(string name, int age, sexo sexo) : this(name, age, 0, sexo, 0) { }
+        public Persona() : this(string.Empty, 0, SEXO) { }
 
         //Métodos
         public int CalcularIMC()
         {
-            double result = _weight / Math.Pow(_height,2);
+            double result = _weight / Math.Pow(_height, 2);
             int imc = IDEAL;
 
-            if(result < 20)
+            if (result < 20)
             {
                 imc = THIN;
             }
-            else if(result > 25)
+            else if (result > 25)
             {
                 imc = OBESE;
             }
-            return imc; 
+            return imc;
         }
 
         public bool EsMayorDeEdad()
@@ -97,9 +96,14 @@ namespace Ejercicio02
 
             int result = int.Parse(num);
 
+            //Opción 1.1
             char letter = LETTERS[result % LETTERS.Length]; //o 23
-
             return $"{num}{letter}";
+
+            //Opción 1.2
+            /*string dniCompleto = "";
+            dniCompleto = num + LETRA[result % LETRA.Length];
+            return dniCompleto;*/
         }
 
         //2º Opción

@@ -52,7 +52,7 @@
 
             //////////////////////////////////////////////////////////////MOSTRAR/////////////////////////////////////////////////////////////
 
-            electrodomesticos = new Electrodomestico[POSICION] { 
+            electrodomesticos = new Electrodomestico[POSICION] { //Se puede juntar con el de arriba
 
             //MODO TECLADO
             /*new Lavadora(precio, color, letra, peso), 
